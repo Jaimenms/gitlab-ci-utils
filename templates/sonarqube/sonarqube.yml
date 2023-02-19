@@ -1,3 +1,25 @@
+"""
+SonarQube template
+
+How to apply:
+
+  Insert the following line in your .gitlab-ci.yml file:
+    include:
+    - project: 'analytics/technology/applications/gitlab-ci-utils'
+      ref: 'main'
+      file: 'templates/sonarqube/sonarqube.yml'
+  
+  Then, you just need to create a job that extends the .sonarqube template, per example:
+  (feel free to change the according to your pipeline)
+  
+    sonarqube-check:
+      stage: quality
+      extends: .sonarqube
+      needs:
+        - job: build_job # this is the job that will generate the test reports xml
+          artifacts: true
+
+"""
 .sonarqube:
   image:
     name: sonarsource/sonar-scanner-cli:latest
