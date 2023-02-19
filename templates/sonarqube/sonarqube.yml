@@ -1,5 +1,10 @@
 #SonarQube template
 #
+# This job will run every time:
+# - a branch with a name started with "feature" is pushed to the repository.
+# - a merge request into main is created.
+# - there is a push in main
+#
 #How to apply:
 #
 #  Insert the following line in your .gitlab-ci.yml file:
