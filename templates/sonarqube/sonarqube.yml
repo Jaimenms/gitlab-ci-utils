@@ -38,6 +38,6 @@
   script:
     - sonar-scanner
   rules:
-    - if: $CI_COMMIT_BRANCH =~ /^feature/ || $CI_COMMIT_BRANCH == "main"
+    - if: $CI_COMMIT_BRANCH =~ /^feature/ || $CI_COMMIT_BRANCH == "main" || $CI_COMMIT_BRANCH =~ /^bugfix/
     - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"
     - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == "main"
